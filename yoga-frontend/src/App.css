@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten&family=Hanalei+Fill&family=Pacifico&family=Audiowide&family=Poppins&family=Risque&family=Shrikhand&family=Ubuntu&display=swap");
+.App {
+  text-align: center;
+}
+
+.loading-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.main-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url(../public/yoga.jpg);
+  /* opacity: 0.85; */
+  z-index: -1;
+}
+
+.loading-screen {
+  transition: opacity 0.8s;
+  opacity: 1;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+}
+
+.main-content {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.main-content.fade-in {
+  opacity: 1;
+}
+
+.loading {
+  opacity: 0;
+  transition: opacity 5s;
+}
+.loading.fade-in {
+  opacity: 1;
+}
+
+.yoga {
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 15px 10px;
+  height: auto;
+  border-radius: 13px;
+  box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.5);
+}
+.yoga.fade-out {
+  opacity: 0;
+}
+
+.btn {
+  padding: 5px 20px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 800;
+  outline: none;
+  background-color: white;
+  border: 2px solid #007bff;
+  color: black;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: green;
+  border: 2px solid #4caf50;
+}
+
+.spinner-image {
+  width: 70%; /* Adjust to fit inside the div */
+  height: auto;
+  position: absolute; /* To center the image in the parent div */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.detailsform {
+  height: auto;
+  /*replace with maxHeight here*/
+  max-height: 70%;
+  overflow-y: auto;
+  width: 60%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  border: 3px solid white;
+  color: white;
+  border-radius: 12px;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.5);
+}
+
+.headdiv {
+  width: 99%;
+  padding: 5px;
+  height: 10%;
+  background-color: white;
+  color: black;
+  display: flex;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  font-size: 45px;
+  margin: 15px;
+}
+
+.input {
+  border: 3px solid #008cba;
+  border-radius: 4px;
+  background-color: #feedff;
+  width: 100%;
+  /*  color: #f8f8f8; */
+  transition: 0.3s;
+  box-sizing: border-box;
+  outline: none;
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+}
+
+.form {
+  /* border: 2px solid white; */
+  display: flex;
+  width: 90%;
+  padding: 25px;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 5px; */
+}
+
+.fade-in {
+  animation: fadeIn ease 0.8s;
+}
+.fade-out {
+  animation: fadeOut ease 0.8s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.label {
+  font-size: 24px;
+}
+
+.btn1 {
+  padding: 15px 25px;
+  cursor: pointer;
+  margin: 15px;
+  font-size: 30px;
+  font-weight: 800;
+  outline: none;
+  background-color: rgb(197, 0, 0);
+  border: 2px solid rgb(94, 0, 0);
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  border-radius: 30px;
+  width: auto;
+}
+
+.btn1:hover {
+  background-color: rgb(255, 136, 136);
+  color: black;
+  border: 2px solid #ffffff;
+  font-weight: 900;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: #aaa6a694;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorBox {
+  border: 2px solid wheat;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  max-height: 40%;
+  overflow: auto;
+  padding: 10px;
+}
