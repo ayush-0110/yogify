@@ -14,6 +14,50 @@
 - Notifications: Utilizes react-toastify for user-friendly notifications.
 - Error Handling: Robust error handling and validation feedback for user inputs.
 
+## Database ER Diagram
+
+### Entities and Their Attributes
+
+**User**
+- **UserID** (Primary Key)
+- Name
+- Age
+- Phone (Unique)
+
+**Registration**
+- **RegistrationID** (Primary Key)
+- **UserID** (Foreign Key from User)
+- Month
+- Year
+- TimeSlot
+- BatchChanged (Boolean)
+
+### Relationships
+
+- A **User** can have multiple **Registrations**. This is a One-to-Many relationship where each registration is uniquely identified by a RegistrationID and is linked to a User.
+
+### Diagram Representation
+
+```plaintext
+User
+|--------------------------------------------------|
+| UserID (PK) | Name       | Age | Phone (Unique)  |
+|--------------------------------------------------|
+| 1           | John Doe   | 30  | 123-456-7890    |
+| 2           | Jane Smith | 25  | 987-654-3210    |
+|--------------------------------------------------|
+
+Registration
+|------------------------------------------------------------------------------------|
+| RegistrationID (PK) | UserID (FK) | Month | Year | TimeSlot     | BatchChanged    |
+|------------------------------------------------------------------------------------|
+| 1                   | 1           | 5     | 2023 | 6-7 AM       | False           |
+| 2                   | 1           | 6     | 2023 | 7-8 AM       | True            |
+| 3                   | 2           | 5     | 2023 | 5-6 PM       | False           |
+|------------------------------------------------------------------------------------|
+```
+
+
 ## Technologies Used
 
    - Frontend: React
