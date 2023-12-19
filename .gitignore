@@ -13,3 +13,6 @@ node_modules/
 .DS_Store
 .next
 .cache
+
+# Local Netlify folder
+.netlify

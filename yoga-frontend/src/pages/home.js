@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoadingAnimation from '../components/specific/LoadingAnimation';
 import LoginForm from '../components/specific/LoginForm';
+import Header from '../components/common/header';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,6 +24,10 @@ const HomePage = () => {
 
   return (
     <div className='main-page'>
+      <div>
+
+      <Header />
+      </div>
       {!isLoading && !showForm && (
         <div className={yogaClass} style={{width:'30%', border:'2px solid white'}}>
           <h1>Are you in the age group 18-65?</h1>
